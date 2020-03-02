@@ -1,0 +1,15 @@
+create table table_statistic
+(
+	id bigint not null,
+	user_id text not null,
+	page_id text not null,
+	visit_date timestamp default now(),
+	constraint t_pkey
+		primary key (id)
+);
+
+create index t_visit_date_idx
+	on table_statistic (visit_date);
+
+create index t_user_id_index
+	on table_statistic (user_id);
